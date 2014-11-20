@@ -1,4 +1,4 @@
-jsonserializer
-==============
+JsonSir
+=======
 
-A Python library for serializing/deserializing JSON-like data.
+A serializer for JSON-like data in Python.
