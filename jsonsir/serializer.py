@@ -35,13 +35,16 @@ def cast(cast_value, data):
 
 class Serializer(object):
 
-    named_encoders = {}
-    valued_encoders = {}
+    def __init__(self, encoders=None):
+        self.named_encoders = {}
+        self.valued_encoders = {}
+        if encoders:
+            self.register(encoders)
 
-    @classmethod
-    def register(cls, encoder):
-        cls.named_encoders[encoder.type_name] = encoder
-        cls.valued_encoders[encoder.type_value] = encoder
+    def register(self, encoders):
+        for encoder in encoders:
+            self.named_encoders[encoder.type_name] = encoder
+            self.valued_encoders[encoder.type_value] = encoder
 
     def serialize(self, data, with_type_name=False):
         """Inplace serializing."""
