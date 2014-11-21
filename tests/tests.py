@@ -5,16 +5,13 @@ import datetime
 import re
 import unittest
 
-from jsonsir import Serializer
-
-from encoders import init
-init()
+from serializer import serializer
 
 
 class JsonSirTest(unittest.TestCase):
 
     def setUp(self):
-        self.serializer = Serializer()
+        self.serializer = serializer
 
     def test_intencoder_serialize(self):
         data = {'age': 10}

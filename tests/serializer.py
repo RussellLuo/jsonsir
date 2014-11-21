@@ -8,9 +8,10 @@ from jsonsir.contrib.regexencoder import RegexEncoder
 from jsonsir.contrib.datetimeencoder import DateTimeEncoder
 
 
-def init():
-    # register some encoders
-    Serializer.register(IntEncoder())
-    Serializer.register(BoolEncoder())
-    Serializer.register(RegexEncoder())
-    Serializer.register(DateTimeEncoder('%Y-%m-%dT%H:%M:%SZ'))
+# instantiate `Serializer` (bound with specified encoders)
+serializer = Serializer([
+    IntEncoder(),
+    BoolEncoder(),
+    RegexEncoder(),
+    DateTimeEncoder('%Y-%m-%dT%H:%M:%SZ'),
+])
