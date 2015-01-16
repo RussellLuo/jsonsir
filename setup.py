@@ -6,10 +6,12 @@ from setuptools import setup, find_packages
 description = 'A serializer for JSON-like data in Python.'
 
 setup(
-    name='jsonsir',
-    version='0.0.1',
+    name='JsonSir',
+    version='0.0.2',
     author='RussellLuo',
     author_email='luopeng.he@gmail.com',
+    maintainer='RussellLuo',
+    maintainer_email='luopeng.he@gmail.com',
     description=description,
     license='MIT',
     long_description=description,
